@@ -1,0 +1,20 @@
+from email import header
+import requests
+
+URL = "http://127.0.0.1:5000/api/v1/products"
+
+data = {
+    "name": "samx",
+    "price": 20.99,
+    "categories": [1, 2]
+}
+
+token = ""
+
+headers = {
+    "Authorization": "Token eyJhbGciOiJSUzI1NiIsImtpZCI6ImE4YmZhNzU2NDk4ZmRjNTZlNmVmODQ4YWY5NTI5ZThiZWZkZDM3NDUiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoic2FteCIsInNob3BfaWQiOjIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9jb21tdW5pdHktYjc1MmEiLCJhdWQiOiJjb21tdW5pdHktYjc1MmEiLCJhdXRoX3RpbWUiOjE2NjA3NzYyNjMsInVzZXJfaWQiOiJ0SnM3UzlERzNtZGNuelBISmQyMW1WWkoxUzYyIiwic3ViIjoidEpzN1M5REczbWRjbnpQSEpkMjFtVlpKMVM2MiIsImlhdCI6MTY2MDc3NjI2MywiZXhwIjoxNjYwNzc5ODYzLCJlbWFpbCI6Inh4eEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInBob25lX251bWJlciI6IisyMTM3OTM3MjQ1OTQiLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7InBob25lIjpbIisyMTM3OTM3MjQ1OTQiXSwiZW1haWwiOlsieHh4QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6ImN1c3RvbSJ9fQ.beJIDW5NUrjmdGXpZw767gBo00ymTQlP6filwuL9G6dd8LvwEuSziNhJbgEb0pdi7KBxtdTF9HqKljYYMjZKUXZ0pAex_IRth3Rpn3iSGFjXVWJaxS4ZQR1by7T2Cui-Q5Gj9KAtpR_BS1iKTUT13DiiiaJVvAodEzlU3gSiuFU6kIQnD1C0NdRs5JaZHO9EKUQMoFHOfQdmtTNG02UvpKwM1TlVKoNdSjXIpy6WvltWBtK6_OnlX0s-XuOley_Nr4pT6g8j_nYD-N7JIEn1ZB0BiPMHaPMH5mXV3sohfykYeKEdKO0JJ9PeHFuhj3CsQr7iAS0tvDaVnw7gvY474A"
+}
+
+res = requests.post(URL, json=data, headers=headers)
+print(res.status_code)
+print(res.json())
